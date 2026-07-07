@@ -1,15 +1,14 @@
 # PFDD MRSSP GUI
 
 An interactive matplotlib tool for constructing and visualizing applied
-stress states for BCC screw dislocation simulations. It generates the pure
+stress states for BCC screw dislocation simulations. This is especially useful for looking at slip evolution on {110} and {112}. It generates the pure
 shear couple
 
 σ = τ₀ (**b** ⊗ **m** + **m** ⊗ **b**)
 
 for an arbitrary orientation of the maximum resolved shear stress plane
 (MRSSP), expresses it in cube axes, and writes the result in the
-`sigma initial ... delta ...` input-line format used by the simulation code
-(e.g. phase-field dislocation dynamics).
+`sigma initial ... delta ...` input-line format used by Phase Field Dislocation Dynamics (PFDD).
 
 ![screenshot](screenshot.png)
 
@@ -34,8 +33,7 @@ updates, in real time:
 
 - the resolved shear τ/τ₀ = cos(θ − χ) on every plane (bar chart and
   trace weighting), making the geometric identity between the {110}
-  shears and the twinning/antitwinning asymmetry of the {112} planes
-  directly visible;
+  shears and the {112} planes directly visible;
 - the six independent components of the applied stress tensor in cube
   axes, i.e. exactly the numbers the simulation input file needs.
 
@@ -111,7 +109,6 @@ S = stress_tensor(chi_deg=-30)   # cube-axis tensor, MRSSP on (211)
 - Add or remove planes by editing the `PLANES` list (angle, mathtext
   label, family); the bar chart, traces, and preset buttons are generated
   from it.
-- Colors live in the `COL` dictionary (`"110"`, `"112"`, `"mrssp"`).
 
 ## Requirements
 
