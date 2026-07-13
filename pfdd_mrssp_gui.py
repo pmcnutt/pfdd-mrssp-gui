@@ -269,8 +269,8 @@ def update(_val=None):
     s = stress_tensor(chi)
     init_part = ("sigma     initial %f %f %f %f %f %f"
                  % (s[0, 0], s[1, 1], s[2, 2], s[0, 1], s[0, 2], s[1, 2]))
-    delta_part = ("delta %f %f %f %f %f %f #chi %+d deg"
-                  % (0, 0, 0, 0, 0, 0, chi))
+    delta_part = ("delta %f %f %f %f %f %f #tau %g chi %+d deg"
+              % (0, 0, 0, 0, 0, 0, state["tau0"], chi))
     state["line"] = init_part + " " + delta_part
     tensor_text.set_text(
         f"tau0 = {state['tau0']:g}   chi = {chi:+.0f} deg\n"
